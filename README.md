@@ -1,118 +1,117 @@
-# 🌌 CoreLayer GPT Memory System
+### 🌌 CoreLayer GPT Memory System
 
-Sistema simbiótico de ingestão, memória e raciocínio contextual sobre o padrão **Medallion Architecture**, projetado para construir uma **IA viva e autoevolutiva**, com camadas independentes e integração completa entre ingestão, vetorização, memória e raciocínio GPT.
-
----
-
-## 🧠 Visão Geral
-
-O **CoreLayer GPT Memory System** organiza o fluxo cognitivo da IA em **camadas de processamento e memória simbiótica**.  
-A arquitetura segue o modelo **Bronze → Silver → Gold → Catalog → Prompt → Memory → Core**, formando um pipeline autoexpansivo que lê, entende, armazena e raciocina sobre dados reais em tempo real.
+A **symbiotic system** for ingestion, memory, and contextual reasoning built on the **Medallion Architecture** pattern — designed to create a **living, self-evolving AI**, with independent layers for ingestion, vectorization, memory, and reasoning.
 
 ---
 
-## 🧩 Arquitetura Geral
+## 🧠 Overview
 
-🟤 BRONZE — Ingestão bruta de dados
-
-⚪ SILVER — Processamento e limpeza semântica
-
-🟡 GOLD — Vetorização e indexação de conhecimento
-
-🔵 CATALOG — Índice universal e governança cognitiva
-
-🟢 PROMPT — Controle e versionamento de intenções
-
-🟣 MEMORY — Memória simbiótica de curto e longo prazo
-
-⚫ CORE — Raciocínio GPT contextualizado (RAG)
-
-🔴 OBSERVABILITY — Métricas, logs e auditoria cognitiva
-
+The **CoreLayer GPT Memory System** organizes AI cognition into **symbolic processing and memory layers**.  
+It follows the **Bronze → Silver → Gold → Catalog → Prompt → Memory → Core** model, forming a self-expanding pipeline that reads, understands, stores, and reasons over real data in real time.
 
 ---
 
-## 📂 Estrutura de Pastas
+## 🧩 General Architecture
 
-```
+🟤 BRONZE — Raw data ingestion  
+⚪ SILVER — Semantic processing and cleaning  
+🟡 GOLD — Vectorization and knowledge indexing  
+🔵 CATALOG — Universal index and cognitive governance  
+🟢 PROMPT — Intent control and versioning  
+🟣 MEMORY — Symbiotic short- and long-term memory  
+⚫ CORE — Contextual GPT reasoning (RAG)  
+🔴 OBSERVABILITY — Metrics, logs, and cognitive audit  
 
+---
+
+## 📂 Folder Structure
+
+```bash
 corelayer/
 │
-├── main.py # Núcleo de orquestração simbiótica
+├── main.py                        # Symbiotic orchestration core
 │
 ├── core/
-│ └── rag_pipeline.py # Pipeline de raciocínio e recuperação (RAG)
+│   └── rag_pipeline.py             # Reasoning and retrieval pipeline (RAG)
 │
 ├── ingestion/
-│ ├── bronze/bronze_loader.py # Ingestão e leitura paralela de dados
-│ ├── silver/silver_processor.py # Split e limpeza de texto
-│ ├── gold/gold_vectorizer.py # Vetorização (embeddings + FAISS)
-│ ├── catalog/catalog_manager.py # Índice universal (datasets, prompts, vetores)
-│ ├── prompt/prompt_layer.py # Versões e templates de prompts
-│ ├── memory/memory_manager.py # Curto e longo prazo de memória simbiótica
-│ └── observability/ # (em expansão) monitoramento e métricas
+│   ├── bronze/bronze_loader.py     # Parallel ingestion and data loading
+│   ├── silver/silver_processor.py  # Text splitting and semantic cleaning
+│   ├── gold/gold_vectorizer.py     # Vectorization (embeddings + FAISS)
+│   ├── catalog/catalog_manager.py  # Universal index (datasets, prompts, vectors)
+│   ├── prompt/prompt_layer.py      # Prompt versioning and templates
+│   ├── memory/memory_manager.py    # Symbiotic short- and long-term memory
+│   └── observability/              # (in progress) monitoring and metrics
 │
-└── README.md # Este documento
+└── README.md                       # This document
 ```
 ---
 
-## ⚙️ Requisitos
+## ⚙️ Requirements
 
-### 🔧 Dependências principais
+### 🔧 Main Dependencies
 - Python ≥ 3.10  
 - LangChain ≥ 0.2  
-- Ollama
+- Ollama (for local model inference)  
 - FAISS  
-- dotenv (opcional)  
+- dotenv (optional)  
 
-Instalação recomendada:
+Recommended installation:
 ```bash
 pip install langchain langchain-openai langchain-community faiss-cpu
 ```
-Crie um diretório com seus arquivos para ingestão inicial:
+
+Create a directory with your initial ingestion files:
 ```bash
 mkdir bronze_data
-cp /caminho/para/arquivos/*.pdf bronze_data/
+cp /path/to/your/files/*.pdf bronze_data/
 ```
-🚀 Execução
 
-Inicie o sistema:
+---
+
+## 🚀 Run
+
+Start the system:
 ```bash
 python3 main.py
 ```
 
-### 🧩 Componentes Principais
-## 🟤 BronzeLoader
+The full symbiotic pipeline will execute:
 
-Lê todos os arquivos PDF e TXT de forma paralela e os transforma em documentos utilizáveis.
+- Bronze → load and read documents  
+- Silver → process and chunk text  
+- Gold → embed and index vectors  
+- Catalog → register dataset and embeddings  
+- Core → interactive reasoning with memory  
 
-## ⚪ SilverProcessor
+---
 
-Faz limpeza semântica e divisão de conteúdo em chunks de tamanho ideal.
+## 🧩 Core Components
 
-## 🟡 GoldVectorizer
+### 🟤 BronzeLoader
+Loads all PDF and TXT files in parallel and converts them into LangChain documents.
 
-Converte cada chunk em embeddings e cria um índice FAISS persistente.
+### ⚪ SilverProcessor
+Cleans and splits the content into semantically meaningful text chunks.
 
-## 🔵 CatalogManager
+### 🟡 GoldVectorizer
+Generates embeddings (via Ollama or Azure) and builds a persistent FAISS vector index.
 
-Mantém o registro completo de datasets, embeddings, prompts e memórias.
+### 🔵 CatalogManager
+Maintains a complete registry of datasets, embeddings, prompts, and memory records.
 
-## 🟢 PromptLayer
+### 🟢 PromptLayer
+Manages and versions prompts, allowing domain-specific intent evolution.
 
-Gerencia e versiona prompts, permitindo evolução de intenções por domínio.
+### 🟣 MemoryManager
+Stores recent interactions (short-term) and automatically generates long-term summaries.
 
-## 🟣 MemoryManager
+### ⚫ RagPipeline
+Combines memory, vector retrieval, and GPT/Ollama reasoning into contextualized, evolving responses.
 
-Armazena interações recentes (curto prazo) e gera resumos automáticos (longo prazo).
+---
 
-## ⚫ RagPipeline
+## 🧑‍💻 Author
 
-Une memória + vetores + GPT para formar respostas contextualizadas com aprendizado contínuo.
-
-
-
-🧑‍💻 Autor
-
-Yuri Freitas
-Desenvolvedor e pesquisador de arquiteturas simbióticas aplicadas à IA cognitiva, sistemas de memória e pipelines autoevolutivos.# Core_Layer
+**Yuri Freitas**  
+Developer and researcher in **symbiotic AI architectures**, cognitive memory systems, and self-evolving reasoning pipelines.
