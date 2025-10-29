@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-PROMPT_DIR = Path("prompts")
+PROMPT_DIR = Path("ingestion/prompts")
 
 class PromptLayer:
     def __init__(self):

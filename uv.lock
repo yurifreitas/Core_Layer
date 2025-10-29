@@ -510,6 +510,7 @@ dependencies = [
     { name = "faiss-cpu" },
     { name = "langchain" },
     { name = "langchain-community" },
+    { name = "langchain-ollama" },
     { name = "langchain-openai" },
     { name = "ollama" },
     { name = "pdfminer-six" },
@@ -523,6 +524,7 @@ requires-dist = [
     { name = "faiss-cpu", specifier = ">=1.12.0" },
     { name = "langchain", specifier = ">=1.0.2" },
     { name = "langchain-community", specifier = ">=0.4.1" },
+    { name = "langchain-ollama", specifier = "==1.0.0" },
     { name = "langchain-openai", specifier = ">=1.0.1" },
     { name = "ollama", specifier = ">=0.6.0" },
     { name = "pdfminer-six", specifier = ">=20250506" },
@@ -1489,6 +1491,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e7/37/1bc4badb93eaa32406a7afdef011336b21719d21ce5ecebf35409a524f8c/langchain_core-1.0.1.tar.gz", hash = "sha256:d769e8d25854466abb672a721143a01bea11cc6ee2d7dae776aa092556db0a26", size = 764566 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c0/54/3cdbe9d151d06cd689b5aa937ac11403b64bbfe76486fda6431a24061721/langchain_core-1.0.1-py3-none-any.whl", hash = "sha256:c7ce58fc487359c44166e255cc0009ef30290da0b6307b75091152847919661e", size = 467122 },
+]
+
+[[package]]
+name = "langchain-ollama"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "ollama" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8b/45/d996b4c0e3e7155ff7a110bf24dcb5043fc1405559a2089c11fe97511cc2/langchain_ollama-1.0.0.tar.gz", hash = "sha256:2ea9ad1b0f0ab319d600b9193d1124a8925523a3b943d75a967718e24ec09a8a", size = 151042 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/91/08/7be292aee722692b13a93316247b57eefb83d4309f5fdfe636cc47786efe/langchain_ollama-1.0.0-py3-none-any.whl", hash = "sha256:5828523fcbd137847490841110a6aedf96b68534e7fe2735715ecf3e835b2391", size = 29006 },
 ]
 
 [[package]]

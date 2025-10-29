@@ -1,5 +1,5 @@
 # ============================================================
-# ⚫ core/rag_pipeline.py — versão local (Ollama)
+# ⚫ core/rag_pipeline.py — versão local (Ollama, compatível LC 0.3+)
 # ============================================================
 from ollama import chat
 
@@ -16,13 +16,29 @@ class RagPipeline:
 
         # 🔹 Busca contexto nos vetores FAISS
         retriever = index.as_retriever(search_kwargs={"k": 3})
-        docs = retriever.get_relevant_documents(query)
+
+        # ✅ Compatível com LangChain >= 0.3
+        try:
+            docs = retriever.invoke(query)
+        except AttributeError:
+            # fallback p/ versões antigas
+            docs = retriever._get_relevant_documents(query)
+
         context = "\n".join([d.page_content for d in docs]) + "\n" + recall
 
         # 🔹 Monta a mensagem completa
         messages = [
-            {"role": "system", "content": prompt.get("system", "Você é uma IA simbiótica local com raciocínio contextual.")},
-            {"role": "user", "content": f"Pergunta: {query}\n\nContexto:\n{context}"},
+            {
+                "role": "system",
+                "content": prompt.get(
+                    "system",
+                    "Você é uma IA simbiótica local com raciocínio contextual.",
+                ),
+            },
+            {
+                "role": "user",
+                "content": f"Pergunta: {query}\n\nContexto:\n{context}",
+            },
         ]
 
         # 🔹 Chama o modelo local Ollama

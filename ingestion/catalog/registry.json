@@ -1,5 +1,11 @@
 {
   "datasets": [],
-  "embeddings": [],
+  "embeddings": [
+    {
+      "index": "knowledge_index",
+      "path": "ingestion/gold/knowledge_index",
+      "timestamp": "2025-10-29T19:08:44.359684"
+    }
+  ],
   "prompts": []
 }

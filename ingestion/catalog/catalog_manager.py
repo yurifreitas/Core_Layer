@@ -1,14 +1,20 @@
+# ============================================================
+# 🔵 ingestion/catalog/catalog_manager.py
+# ============================================================
 import json
 from pathlib import Path
 from datetime import datetime
 
 CATALOG_PATH = Path("ingestion/catalog/registry.json")
-CATALOG_PATH.parent.mkdir(parents=True, exist_ok=True)  
+CATALOG_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 class CatalogManager:
     def __init__(self):
         if not CATALOG_PATH.exists():
-            CATALOG_PATH.write_text(json.dumps({"datasets": [], "embeddings": [], "prompts": []}, indent=2))
+            CATALOG_PATH.write_text(json.dumps(
+                {"datasets": [], "embeddings": [], "prompts": []},
+                indent=2
+            ))
         self.data = json.loads(CATALOG_PATH.read_text())
 
     def _save(self):
